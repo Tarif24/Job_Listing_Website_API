@@ -31,3 +31,23 @@ export const getAllJobs = async (req, res) => {
         res.status(500).json({ error: "INTERNAL SERVER ERROR" });
     }
 };
+
+export const update = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const jobExist = await Job.findOne({ _id: id });
+
+        if (!jobExist) {
+            return res.status(404).json({
+                message: "CANNOT UPDATE A JOB THAT DOES NOT EXIST",
+            });
+        }
+
+        const updateJob = await Job.findByIdAndUpdate(id, req.body, {
+            new: true,
+        });
+        res.status(201).json(updateJob);
+    } catch (error) {
+        res.status(500).json({ error: "INTERNAL SERVER ERROR" });
+    }
+};
