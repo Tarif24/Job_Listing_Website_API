@@ -51,3 +51,23 @@ export const update = async (req, res) => {
         res.status(500).json({ error: "INTERNAL SERVER ERROR" });
     }
 };
+
+export const deleteJob = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const jobExist = await Job.findOne({ _id: id });
+
+        if (!jobExist) {
+            return res.status(404).json({
+                message: "CANNOT DELETE A JOB THAT DOES NOT EXIST",
+            });
+        }
+
+        await Job.findByIdAndDelete(id);
+        res.status(201).json({
+            message: `JOB WITH _ID ${id} HAS BEEN DELETED`,
+        });
+    } catch (error) {
+        res.status(500).json({ error: "INTERNAL SERVER ERROR" });
+    }
+};
