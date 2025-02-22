@@ -1,0 +1,30 @@
+{
+    "name": "job_listing_website_api",
+    "version": "1.0.0",
+    "description": "Job listing website CRUD API",
+    "homepage": "https://github.com/Tarif24/Job_Listing_Website_API#readme",
+    "bugs": {
+        "url": "https://github.com/Tarif24/Job_Listing_Website_API/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Tarif24/Job_Listing_Website_API.git"
+    },
+    "license": "ISC",
+    "author": "Tarif Mohammad",
+    "type": "commonjs",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "nodemon index.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.20.3",
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "mongoose": "^8.10.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.9"
+    }
+}
