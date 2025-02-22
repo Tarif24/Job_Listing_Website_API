@@ -1,8 +1,9 @@
 import express from "express";
-import { fetch } from "../controller/jobController.js";
+import { getAllJobs, create } from "../controller/jobController.js";
 
 const route = express.Router();
 
-route.get("/fetch", fetch);
+route.post("/create", create);
+route.get("/getAllJobs", getAllJobs);
 
 export default route;
