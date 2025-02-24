@@ -41,6 +41,23 @@ export const getAllJobs = async (req, res) => {
     }
 };
 
+export const getJob = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const jobExist = await Job.findOne({ _id: id });
+
+        if (!jobExist) {
+            return res.status(404).json({
+                message: "CANNOT GET A JOB THAT DOES NOT EXIST",
+            });
+        }
+
+        res.status(201).json(jobExist);
+    } catch (error) {
+        res.status(500).json({ error: "INTERNAL SERVER ERROR" });
+    }
+};
+
 export const update = async (req, res) => {
     try {
         const id = req.params.id;
@@ -72,8 +89,6 @@ export const update = async (req, res) => {
             { $pull: { Jobs: { _id: jobExist._id } } },
             { new: true }
         );
-
-        return res.status(201).json({ message: pos });
 
         await JobContainer.findOneAndUpdate(
             { _id: jobCon._id },
