@@ -10,7 +10,7 @@
   <h3 align="center">Job Listing API</h3>
 
   <p align="center">
-    A job listing API that allows you to Create Read Update and Delete job listings
+    A job listing API that allows you to Create, Read, Update, and Delete job listings
     <br />
     <br />
     ALL LIVE LINKS ARE TO THE JOB LISTING WEBSITE WHERE THE API IS USED
@@ -31,7 +31,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
-        <li><a href="#hosted-with">Built With</a></li>
+        <li><a href="#hosted-with">Hosted With</a></li>
       </ul>
     </li>
     <li>
@@ -91,40 +91,47 @@ This API has job listings that are and can be created, read, updated and deleted
 
 -   No prerequisites at this time
 
-```sh
-npm install npm@latest -g
-```
-
 ### Routes
 
 -   To get all the jobs that are avalible the structure of a job will be down below
-    -- The Return will be an array of all the jobs
-    `sh
-https://job-listing-api-84p2.onrender.com/api/job/getAllJobs
-`
+-   The Return will be an array of all the jobs
+
+    ```sh
+    https://job-listing-api-84p2.onrender.com/api/job/getAllJobs
+    ```
+
+````
 -   To get a specific job from the list the ID is needed the structure of the job will be down below
-    -- The Return will be the specifc job that has that ID
-    `sh
+  -   The Return will be the specifc job that has that ID
+    ```sh
 https://job-listing-api-84p2.onrender.com/api/job/:ID
-`
+````
+
 -   To create a job a job object is requierd and the structure will be down below
-    -- The Return will be the job that was just created
-    `sh
-https://job-listing-api-84p2.onrender.com/api/job/create
-`
+-   The Return will be the job that was just created
+
+    ```sh
+    https://job-listing-api-84p2.onrender.com/api/job/create
+    ```
+
+````
 -   To update a job a job object is requierd and the structure will be down below and a job id is requierd
-    -- The Return will be the job that was just updated
-    `sh
+-   The Return will be the job that was just updated
+    ```sh
 https://job-listing-api-84p2.onrender.com/api/job/update/:ID
-`
+````
+
 -   To Delete a job a job ID is requierd
-    -- The Return will be a confirmation message
-    `sh
-https://job-listing-api-84p2.onrender.com/api/job/delete/:ID
-`
+-   The Return will be a confirmation message
+
+    ```sh
+    https://job-listing-api-84p2.onrender.com/api/job/delete/:ID
+    ```
+
+````
 
 JOB OBJECT STRUCTURE:
-`sh
+```sh
 {
       "title": "",
       "type": "",
@@ -138,7 +145,7 @@ JOB OBJECT STRUCTURE:
         "contactPhone": ""
       }
 }
-`
+````
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
