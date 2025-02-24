@@ -6,6 +6,9 @@ import route from "./routes/jobRoute.js";
 
 const app = express();
 
+const cors = require("cors");
+app.use(cors());
+
 app.use(bodyParser.json());
 dotenv.config();
 const PORT = process.env.PORT || 5000;
