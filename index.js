@@ -3,6 +3,9 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import route from "./routes/jobRoute.js";
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
 
 const app = express();
 
