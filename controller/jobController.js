@@ -14,8 +14,15 @@ export const create = async (req, res) => {
         // If needed add duplicate job detection functionality here
 
         const updatedJobCon = await JobContainer.findOneAndUpdate(
-            jobCon,
-            { $push: { Jobs: jobData } },
+            { _id: jobCon._id },
+            {
+                $push: {
+                    Jobs: {
+                        $each: [jobData],
+                        $position: 0,
+                    },
+                },
+            },
             { new: true }
         );
 
@@ -64,16 +71,6 @@ export const update = async (req, res) => {
         const jobExist = await Job.findOne({ _id: id });
         const jobCon = await JobContainer.findOne();
 
-        const posResult = await JobContainer.aggregate([
-            {
-                $project: {
-                    index: { $indexOfArray: ["$Jobs", [jobExist._id]] },
-                },
-            },
-        ]);
-
-        const pos = posResult.length > 0 ? posResult[0].index : -1;
-
         if (!jobExist) {
             return res.status(404).json({
                 message: "CANNOT UPDATE A JOB THAT DOES NOT EXIST",
@@ -96,7 +93,7 @@ export const update = async (req, res) => {
                 $push: {
                     Jobs: {
                         $each: [updateJob],
-                        $position: pos,
+                        $position: 0,
                     },
                 },
             },
