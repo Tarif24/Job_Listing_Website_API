@@ -1,10 +1,17 @@
 import mongoose from "mongoose";
 
-const jobSchema = new mongoose.Schema({
-    id: {
+const jobContainer = new mongoose.Schema({
+    name: {
         type: String,
-        required: true,
+        default: "Job Container",
     },
+    Jobs: {
+        type: [],
+        default: [],
+    },
+});
+
+const jobSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
@@ -47,4 +54,7 @@ const jobSchema = new mongoose.Schema({
     },
 });
 
+const JobContainer = mongoose.model("jobContainer", jobContainer);
+
 export default mongoose.model("job", jobSchema);
+export { JobContainer };

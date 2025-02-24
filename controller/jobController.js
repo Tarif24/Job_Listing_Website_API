@@ -1,18 +1,25 @@
-import jobModel from "../model/jobModel.js";
-import Job from "../model/jobModel.js";
+import Job, { JobContainer } from "../model/jobModel.js";
 
 export const create = async (req, res) => {
     try {
-        const jobData = new Job(req.body);
-        const { id } = jobData;
+        let jobCon = await JobContainer.findOne();
 
-        const jobExist = await Job.findOne({ id });
-        if (jobExist) {
-            return res.status(400).json({ message: "JOB ALREADY EXISTS" });
+        if (jobCon.length === 0) {
+            jobCon = new JobContainer();
+            await jobCon.save();
         }
 
-        const savedJob = await jobData.save();
-        res.status(200).json(savedJob);
+        const jobData = new Job(req.body);
+
+        // If needed add duplicate job detection functionality here
+
+        const updatedJobCon = await JobContainer.findOneAndUpdate(
+            jobCon,
+            { $push: { Jobs: jobData } },
+            { new: true }
+        );
+
+        res.status(200).json(updatedJobCon);
     } catch (error) {
         res.status(500).json({ error: "INTERNAL SERVER ERROR" });
     }
