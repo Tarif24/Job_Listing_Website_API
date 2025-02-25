@@ -104,8 +104,10 @@ This API has job listings that are and can be created, read, updated and deleted
 
 <br/>
 <br/>
-*   To get a specific job from the list the ID is needed the structure of the job will be down below
-  *   The Return will be the specifc job that has that ID
+-   To get a specific job from the list the ID is needed the structure of the job will be down below
+  -   The Return will be the specifc job that has that ID
+-   To get all the jobs that are avalible the structure of a job will be down below
+-   The Return will be an array of all the jobs
 
 ```sh
 https://job-listing-api-84p2.onrender.com/api/job/:ID
