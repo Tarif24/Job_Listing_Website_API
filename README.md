@@ -104,8 +104,8 @@ This API has job listings that are and can be created, read, updated and deleted
 
 <br/>
 <br/>
--   To get a specific job from the list the ID is needed the structure of the job will be down below
--   The Return will be the specifc job that has that ID
+*   To get a specific job from the list the ID is needed the structure of the job will be down below
+  *   The Return will be the specifc job that has that ID
 
 ```sh
 https://job-listing-api-84p2.onrender.com/api/job/:ID
@@ -113,8 +113,8 @@ https://job-listing-api-84p2.onrender.com/api/job/:ID
 
 <br/>
 <br/>
--   To create a job a job object is requierd and the structure will be down below
--   The Return will be the job that was just created
+*   To create a job a job object is requierd and the structure will be down below
+  *   The Return will be the job that was just created
 
 ```sh
 https://job-listing-api-84p2.onrender.com/api/job/create
@@ -122,8 +122,8 @@ https://job-listing-api-84p2.onrender.com/api/job/create
 
 <br/>
 <br/>
--   To update a job a job object is requierd and the structure will be down below and a job id is requierd
--   The Return will be the job that was just updated
+*   To update a job a job object is requierd and the structure will be down below and a job id is requierd
+  *   The Return will be the job that was just updated
 
 ```sh
 https://job-listing-api-84p2.onrender.com/api/job/update/:ID
@@ -131,8 +131,8 @@ https://job-listing-api-84p2.onrender.com/api/job/update/:ID
 
 <br/>
 <br/>
--   To Delete a job a job ID is requierd
--   The Return will be a confirmation message
+*   To Delete a job a job ID is requierd
+  *   The Return will be a confirmation message
 
 ```sh
     https://job-listing-api-84p2.onrender.com/api/job/delete/:ID
@@ -142,6 +142,8 @@ https://job-listing-api-84p2.onrender.com/api/job/update/:ID
 <br/>
 <br/>
 JOB OBJECT STRUCTURE:
+<br/>
+<br/>
 
 ```sh
 {
