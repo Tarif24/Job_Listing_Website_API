@@ -24,11 +24,11 @@ const corsOptions = {
     allowedHeaders: ["Content-Type", "Authorization"],
 };
 
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors());
 //app.use(cors());
 app.use(bodyParser.json());
 dotenv.config();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 const MONGOURL = process.env.MONGO_URL;
 
 mongoose
