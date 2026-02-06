@@ -30,7 +30,6 @@ app.use(bodyParser.json());
 dotenv.config();
 const PORT = process.env.PORT || 8000;
 const MONGOURL = process.env.MONGO_URL;
-console.log(MONGOURL);
 
 mongoose
     .connect(MONGOURL)
