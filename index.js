@@ -18,14 +18,13 @@ const corsOptions = {
         "http://localhost:5173",
         "https://joblisting.tarifmohammad.com",
         "https://joblisting-api.tarifmohammad.com",
-        process.env.CLIENT_URL,
     ].filter(Boolean),
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
 };
 
-app.use(cors(corsOptions));
+app.use(cors({ origin: "*" }));
 //app.use(cors());
 app.use(bodyParser.json());
 dotenv.config();
